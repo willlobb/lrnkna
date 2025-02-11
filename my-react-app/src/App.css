@@ -55,7 +55,7 @@ html, body, #root {
   color: var(--secondary-color);
 }
 
-/* Dropdown Menu for Practice */
+/* Dropdown Menu for Practice in Navbar */
 .dropdown {
   position: relative;
 }
@@ -112,8 +112,8 @@ html, body, #root {
   box-sizing: border-box;
 }
 
-/* Flex container for Home page boxes */
-.home-flex {
+/* Two-Column Layout for Home Page */
+.home-two-column {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -121,26 +121,42 @@ html, body, #root {
   justify-content: space-between;
 }
 
-/* Box styling for Home page (both Katakana & Hiragana practice boxes and Auth box) */
-.home-box, .auth-box {
+/* Left Column: Expanded for more space for Auth & Timed Test */
+.left-column {
+  flex: 1 1 45%;  /* Increase basis to about 45% */
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Right Column: Practice Boxes */
+.right-column {
+  flex: 1 1 45%;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Box Styles for Home Page (Auth, Timed Test, Practice) */
+.home-box, .auth-box, .timed-test-box {
   background-color: var(--background-color);
   border: 1px solid var(--border-color);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   padding: 20px;
-  flex: 1 1 calc(48% - 20px);
-  min-width: 300px;
   transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
   animation: fadeIn 0.5s ease-in-out;
 }
 
-.home-box:hover, .auth-box:hover {
+.home-box:hover, .auth-box:hover, .timed-test-box:hover {
   background-color: var(--accent-color);
   transform: scale(var(--hover-scale));
 }
 
-/* Internal Sections */
-.home-header, .home-main, .auth-header, .auth-main {
+/* Internal Sections in Boxes */
+.home-header, .home-main, .auth-header, .auth-main, .test-box-header, .test-box-main {
   width: 100%;
   box-sizing: border-box;
   margin-bottom: 20px;
@@ -163,8 +179,8 @@ html, body, #root {
   background-color: #333;
 }
 
-/* Link/Button styling for Practice boxes */
-.practice-link, .home-link {
+/* Link/Button styling for Practice boxes & Timed Test box */
+.practice-link, .home-link, .test-btn {
   display: inline-block;
   margin-top: 1rem;
   padding: 0.75rem 1.5rem;
@@ -175,7 +191,7 @@ html, body, #root {
   transition: background-color var(--transition-speed) ease;
 }
 
-.practice-link:hover, .home-link:hover {
+.practice-link:hover, .home-link:hover, .test-btn:hover {
   background-color: #555;
 }
 
@@ -185,7 +201,7 @@ html, body, #root {
   to { opacity: 1; transform: scale(1); }
 }
 
-/* GROUP TOGGLE STYLES FOR PRACTICE PAGE */
+/* GROUP TOGGLE STYLES FOR PRACTICE PAGE (if needed) */
 .group-toggle-container {
   margin-bottom: 20px;
   max-width: 600px;
@@ -251,7 +267,7 @@ html, body, #root {
   transform: translateX(26px);
 }
 
-/* Group Container for each family of flashcards */
+/* Group Container for each family of flashcards (if needed) */
 .group-container {
   margin-bottom: 30px;
 }
@@ -260,7 +276,7 @@ html, body, #root {
   margin-bottom: 10px;
 }
 
-/* Flashcards styling */
+/* Flashcards Styling (shared by practice pages) */
 .flashcards-container {
   display: flex;
   flex-wrap: wrap;
