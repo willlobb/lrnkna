@@ -1,0 +1,37 @@
+.scroll-container {
+    width: 100%;
+    overflow: hidden;
+    margin: 20px 0;
+    background: transparent;
+  }
+  
+  .scrolling-row {
+    display: flex;
+    white-space: nowrap;
+    /* Adjust duration (20s) for scroll speed */
+    animation: scroll 20s linear infinite;
+  }
+  
+  .scroll-char {
+    display: inline-block;
+    font-size: 2rem;
+    color: #666;
+    padding: 0 20px;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .scroll-char:hover {
+    transform: scale(1.5);
+    color: #000;
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      /* Moves left by 50% of the content width, creating a seamless loop */
+      transform: translateX(-50%);
+    }
+  }
+  
